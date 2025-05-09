@@ -39,9 +39,11 @@ This is the official repository for **pAnno**, a groundbreaking end-to-end workf
 ## 🚀 Representative Applications
 🔥 **Exceptional tolerance to search space expansion:** Maintains 98.2% sensitivity with only 0.7% suspicion across a 50-fold expanded search space in H. sapiens data.
 
-🔥 **Efficient inference of novel genomic coding region** implemented with tag-based indexing and supporting the detection of splicing and mutation events.
+🔥 **Efficient inference of novel genomic coding region** Accurately localizes novel events with minimal overhead, accounting for only ~3% of total runtime beyond the database search phase.
 
-🔥 **Two species-specific CDS filters** for scoring novel CDS candidates and reconstructing the complete gene coding regions.
+🔥 **Annotation beyond the reference genome:** Identifies 2,148 novel genes in Pyrus supported by BLASTp validation (e-value < 1e−5, coverage ≥ 70%).
+
+🔥 **Expanded immunopeptidomic landscape:** Discovers over 50 times more non-canonical HLA-bound peptides than original reports in lung cancer samples, followed by affinity and structural validation.
 
 
 
