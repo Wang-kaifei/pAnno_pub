@@ -25,7 +25,7 @@ Staring our repository will remind you our updates. -->
 
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2308.12345-B31B1B)](https://arxiv.org/abs/1234.56789)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) -->
-[![Bohrium](https://img.shields.io/badge/Try%20on-Bohrium%20App-00BFFF)](https://bohrium.example.com/pAnno)
+<!-- [![Bohrium](https://img.shields.io/badge/Try%20on-Bohrium%20App-00BFFF)](https://bohrium.example.com/pAnno) -->
 <!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-repo/pUniFind) -->
 
 This is the official repository for **pAnno**, a groundbreaking end-to-end workflow for identifying novel coding events, including full gene coding regions, splicing, mutations, and non-canonical HLA-bound peptides. Developed by [pFind group](https://pfind.net/).
