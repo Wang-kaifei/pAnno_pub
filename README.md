@@ -21,23 +21,29 @@ Staring our repository will remind you our updates. -->
 
 
 
-# pUniFind: Unified large pretrained deep learning model pushing the limit of mass spectra interpretation
+# Decoding Dark Genomes: Universal, Precise and Fast Discovery of Novel Coding Regions with pAnno
 
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2308.12345-B31B1B)](https://arxiv.org/abs/1234.56789)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) -->
 [![Bohrium](https://img.shields.io/badge/Try%20on-Bohrium%20App-00BFFF)](https://bohrium.example.com/punifind)
 <!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-repo/pUniFind) -->
 
-This is the official repository for **pUniFind**, the most powerful zero-shot open peptide-spectrum scoring model surpassing other SOTA search engines and the first zero-shot open de novo sequencing deep learning model supporting over 1300 modifications. Developed by [pFind group](https://pfind.net/) and [DP Technology](https://www.dp.tech/en). We will release our arxiv preprint very soon.
+This is the official repository for **pAnno**, a groundbreaking end-to-end workflow for identifying novel coding events, including full gene coding regions, splicing, mutations, and non-canonical HLA-bound peptides. Developed by [pFind group](https://pfind.net/).
+## 🚀 Key Designs
+🔥 **Multi-tiered iterative open search strategy** enables dynamic database refinement and hierarchical spectral analysis.
 
-## 🚀 Key Features
-🔥 **Powerful open scoring performance.** Surpassing all former SOTA search enegines including open-pFind and MSFragger with MSBooster supporting over 1300 modifications. 
+🔥 **Efficient peptide-to-CDS mapping algorithm** implemented with tag-based indexing and supporting the detection of splicing and mutation events.
 
-🔥 **High Accuracy.** Comprehensive experimental results demonstrate that the model exhibits no significant overfitting to either the target or decoy peptides in the training data, while maintaining high accuracy across different evaluation scenarios. More careful evaluations can be seen in our preprint.
+🔥 **Two species-specific CDS filters** for scoring novel CDS candidates and reconstructing the complete gene coding regions.
 
-🔥 **Zero-shot open de novo.** The first open de novo sequencing deep learning methods without the need for finetuning, supporting over 1300 modifications.
+## 🚀 Representative Applications
+🔥 **Exceptional tolerance to search space expansion:** Maintains 98.2% sensitivity with only 0.7% suspicion across a 50-fold expanded search space in H. sapiens data.
 
-🔥 **De Novo reliable result filtering and user-friendly result file.** Based on various deep learning features, our model can effectively filter out unreliable results which is extremely useful for real world usage. Our user-friendly results file also contains end-to-end score, cos similarity, mass difference and missing fragment ion sites, which can better help user to evaluate its reliability. Result file also support visualization.
+🔥 **Efficient inference of novel genomic coding region** implemented with tag-based indexing and supporting the detection of splicing and mutation events.
+
+🔥 **Two species-specific CDS filters** for scoring novel CDS candidates and reconstructing the complete gene coding regions.
+
+
 
 ## &#x1F4E3; News
 - **2025/*/** pUniFind repository Initial Release 🚀.
