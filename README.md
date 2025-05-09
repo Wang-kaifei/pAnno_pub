@@ -91,6 +91,8 @@ pip install -r requirements.txt
 ```
 
 ## 🛠️ Params
+The configuration file is in the format of a text file with the extension __.cfg__. The parameters are divided into three sections: __[General]__, __[Database]__, and __[Search]__. The parameters in each section are as follows:
+### [General]
 - __tTagLen__: Length of the tag used for indexing. The default value is 6, which is recommended for most cases. Please note that it should not be longer than the minimum peptide length.
 - __tNameFlag__: A flag used to label reference protein names, with the default set to "$$". This flag is added to proteins from the reference database to distinguish them from those derived from the customized database. You may choose custom characters, but they must not appear in the genome or transcriptome data.
 - __maxprolen__: The maximum total length of protein sequences (in amino acids) to be loaded into memory at once. The default is 600,000,000 amino acids, which allows parallel processing of 80k MS2 on a machine with 128 GB of RAM. You can adjust this value based on your system’s memory capacity.
@@ -98,8 +100,8 @@ pip install -r requirements.txt
 - __minprorna__: Minimum length (in amino acids) for sequences of three-frame translation of RNA, default is 50.
 - __transplnum__: Number of threads used for substring-level deduplication in the customized database. It is recommended to set this to 1.5 times the number of CPU cores.
 - __TransPath__: Output directory for the customized database. This should be an empty folder that will store both the translated and deduplicated databases.
-- __DNAFolder__: Path to the file or folder containing DNA sequences, typically in FASTA or FNA format. Sequence headers should begin with “>”.
-- __RNAFolder__: Path to the file or folder containing RNA sequences, typically in FASTA or FNA format. Sequence headers should begin with “>”. Please note that pAnno requires assembled RNA sequences, which can be obtained from RNA reads through either reference-guided or de novo transcriptome assembly. We recommend using __de novo__ assembly by [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) to maximize the recovery of candidate sequences. Rest assured, pAnno's robust algorithms automatically filter out low-confidence results.
+- __DNAFolder__: Path to the file or folder containing DNA sequences.
+- __RNAFolder__: Path to the file or folder containing RNA sequences. Please note that pAnno requires assembled RNA sequences, which can be obtained from RNA reads through either reference-guided or de novo transcriptome assembly. We recommend using __de novo__ assembly by [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) to maximize the recovery of candidate sequences. Rest assured, pAnno's robust algorithms automatically filter out low-confidence results.
 - __ProteinDatabase__: Reference protein database, with sequence headers starting with “>”.
 - __RawGFF__: Genome annotation file in General Feature Format (GFF). pAnno uses this file to generate correction information for annotated genes.
 - __OutputPath__: Path to the output directory of all results.
@@ -121,40 +123,38 @@ pip install -r requirements.txt
 - __specie_mode__: Species type for your study. Set to 1 for complex species with extensive splicing, and 0 for simple species with minimal splicing.
 - __chr_map_pl__: Number of chromosomes processed in parallel during peptide-to-genome mapping. This parameter is effective for complex species such as _H. sapiens_, whose longest DNA strands can exceed 10,000 bases. It is recommended to set this to approximately 1.5 times the number of CPU cores.
 - __pep_map_pl__: Number of peptides processed in parallel per chromosome during mapping. Also recommended to be around 1.5 times the number of CPU cores.
+  
+## 📅 Note
+### We will update within two days, including test data and explanation of the software output results.
 
 
-<!-- 
 ## 🛠️ Technical Support  
-Should you encounter any technical issues, suggestions, observe suboptimal performance, or identify inconsistencies between pUniFind results and our evaluation metrics, we welcome your feedback 🙏. We are looking for bad cases to further refine our model. If you have any suggestions about our software, please do not hesitate to contact us. We are **actively** updating and refining our software, since the main author is **far** from graduation :(.
+Should you encounter any technical issues, suggestions, observe suboptimal performance, or identify inconsistencies between __pAnno__ results and our evaluation metrics, we welcome your feedback 🙏. 
+- If you have any suggestions about our software, please do not hesitate to contact us.
+- If you think the software can be __extended__ to support __new application scenarios__, please feel free to contact us and we will actively develop new features.
 
 We provide **priority support** for user-reported issues through the following channels:  
 
 **For technical inquiries:**  
-1. **GitHub Issues**: [Open a new issue](https://github.com/pFindStudio/pUniFind/issues) with:  
-   - Data description.  
-   - Error logs and environment.
-   - Uploaded folder description  
+1. **GitHub Issues**: [Open a new issue](https://github.com/Wang-kaifei/pAnno_pub/issues)
 
-1. **pFind Studio user support WeChat group**: 
-   - Please add my WeChat: ```JL_Zhao2000```, and I will invite you into our user support group. (Because WeChat invitation expire in one week.)
+2. **pFind Studio user support WeChat group**: 
+   - Please add my WeChat: ```wwwangnapao99```, and I will invite you into our user support group. (Because WeChat invitation expire in one week.)
 
 **For collaboration requests:**  
-📧 **Contact info**: Jiale Zhao.  Email: [zhaojiale22z@ict.ac.cn](mailto:zhaojiale22z@ict.ac.cn) or [marshmallowzjl@gmail.com](mailto:marshmallowzjl@gmail.com).
+📧 **Contact info**: Kaifei Wang.  Email: [wangkaifei20@mails.ucas.edu.cn](mailto:wangkaifei20@mails.ucas.edu.cn).
 
 ## 📅 Roadmap
-**Staring** and **watching** our repo will remind you our updates. We will keep optimizing our model.
+**Staring** and **watching** our repo will remind you our updates. We will keep optimizing our software.
 | Milestone         | Status |
 |-------------------|--------|
-| Post arxiv preprint |  🚄 very soon |
-| TIMS / Astral Support | 🚄 very soon |
-| nce option (currently use default 25 as input) | 🚄 very soon |
-| Integarating pUniFind into open-pFind | 🚧 Preparing |
-| User-defined new PTM Tuning | 📝 Planning |
-| Improving the performance and speed of scoring and de novo sequencing. | 📝 Long-term |
+| Post arxiv preprint | 📝 Planning |
+| TIMS / Astral support | 🚄 very soon |
+| DIA support | 🚧 Preparing |
+| Developing powerful scoring algorithm for non-specific cleavage | 📝 Planning |
 
 ## 🤝 Citation <a name="-citation"></a>
 If you find our software is useful and helped your research,  **please cite** us 🙏 through:
 ```bash
 Wating for bioxiv
 ```
-Every citation of yours will motivate the main author to make pUniFind more user-friendly and more powerful. Main author need your valuable citations and stars to find a job after graduation 😫. -->
