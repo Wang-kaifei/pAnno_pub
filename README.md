@@ -46,7 +46,7 @@ This is the official repository for **pAnno**, a groundbreaking end-to-end workf
 
 
 ## &#x1F4E3; News
-- **2025/*/** pUniFind repository Initial Release 🚀.
+- **2025/*/** pAnno repository Initial Release 🚀.
 
 
 
@@ -85,7 +85,7 @@ python predict.py \
   --modification_config ./configs/open_mods.yaml \
   --device cuda:0
 ``` -->
-
+<!-- 
 ## 🛠️ Technical Support  
 Should you encounter any technical issues, suggestions, observe suboptimal performance, or identify inconsistencies between pUniFind results and our evaluation metrics, we welcome your feedback 🙏. We are looking for bad cases to further refine our model. If you have any suggestions about our software, please do not hesitate to contact us. We are **actively** updating and refining our software, since the main author is **far** from graduation :(.
 
@@ -119,4 +119,4 @@ If you find our software is useful and helped your research,  **please cite** us
 ```bash
 Wating for bioxiv
 ```
-Every citation of yours will motivate the main author to make pUniFind more user-friendly and more powerful. Main author need your valuable citations and stars to find a job after graduation 😫.
+Every citation of yours will motivate the main author to make pUniFind more user-friendly and more powerful. Main author need your valuable citations and stars to find a job after graduation 😫. -->
