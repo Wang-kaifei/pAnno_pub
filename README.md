@@ -138,11 +138,12 @@ We provide **priority support** for user-reported issues through the following c
 **For technical inquiries:**  
 1. **GitHub Issues**: [Open a new issue](https://github.com/Wang-kaifei/pAnno_pub/issues)
 
-2. **pFind Studio user support WeChat group**: 
-   - Please add my WeChat: ```wwwangnapao99```, and I will invite you into our user support group. (Because WeChat invitation expire in one week.)
+2. **pFind Studio user support**: 
+   - **Support Email** [support@pfind.org](mailto:support@pfind.org)
+   <!-- - **Forum**: [issues](https://pfind.net/forum/) -->
 
 **For collaboration requests:**  
-📧 **Contact info**: Kaifei Wang.  Email: [wangkaifei20@mails.ucas.edu.cn](mailto:wangkaifei20@mails.ucas.edu.cn).
+📧 **Contact info**: Kaifei Wang.  Email: [wangkaifei20@mails.ucas.edu.cn](mailto:wangkaifei20@mails.ucas.edu.cn), WeChat: ```wwwangnapao99```
 
 ## 📅 Roadmap
 **Staring** and **watching** our repo will remind you our updates. We will keep optimizing our software.
