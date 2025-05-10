@@ -41,7 +41,7 @@ This is the official repository for **pAnno**, a groundbreaking end-to-end workf
 
 🔥 **Efficient inference of novel genomic coding region** Accurately localizes novel events with minimal overhead, accounting for only ~3% of total runtime beyond the database search phase.
 
-🔥 **Annotation beyond the reference genome:** Identifies 2,148 novel genes in _Pyrus_ supported by BLASTp validation (e-value < 1e−5, sequence coverage ≥ 70%).
+🔥 **Annotation beyond the reference genome:** Identifies 2,148 novel genes in _Pyrus_ supported by [BLASTp](https://blast.ncbi.nlm.nih.gov/Blast.cgi) validation (e-value < 1e−5, sequence coverage ≥ 70%).
 
 🔥 **Expanded immunopeptidomic landscape:** Discovers over 50 times more non-canonical HLA-bound peptides than original reports in lung cancer samples, followed by affinity and structural validation.
 
