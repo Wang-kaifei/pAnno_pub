@@ -80,6 +80,7 @@ pAnno.exe pAnno.cfg # It is recommended to replace it with an absolute path
 ```
 
 ### 2. Output Explanation
+The output files and format explanations for each stage can be found [here](./output.md).
 
 ### 3. CDS filter for simple species: deep learning-based scoring model
 This is an independent deep learning-based module specifically designed for simple organisms with minimal splicing, aiming to score and filter candidate CDS regions. Initial results should be generated using the main software, after which our provided script can be employed for online training.
@@ -171,6 +172,6 @@ We provide **priority support** for user-reported issues through the following c
 
 ## 🤝 Citation <a name="-citation"></a>
 If you find our software is useful and helped your research,  **please cite** us 🙏 through:
-```bash
+<!-- ```bash
 Wating for bioxiv
-```
+``` -->
