@@ -48,8 +48,7 @@ This is the official repository for **pAnno**, a groundbreaking end-to-end workf
 
 
 ## &#x1F4E3; News
-- **2025/5/8**
-- pAnno repository Initial Release 🚀.
+- **2025/5/8** pAnno repository Initial Release 🚀.
 
 
 
@@ -91,24 +90,22 @@ pip install -r requirements.txt
 ```
 
 ## 🛠️ Params
-The configuration file is in the format of a text file with the extension __.cfg__. The parameters are divided into three sections: __[General]__, __[Database]__, and __[Search]__. The parameters in each section are as follows:
+The configuration file is in the format of a text file with the extension __.cfg__. The parameters are divided into three sections: __[General]__, __[DBGeneration]__, __[DBSearch]__, __[FDRControl]__, __[CDSInference]__ and __[MSData]__. The parameters in each section are as follows:
 ### [General]
 - __tTagLen__: Length of the tag used for indexing. The default value is 6, which is recommended for most cases. Please note that it should not be longer than the minimum peptide length.
 - __tNameFlag__: A flag used to label reference protein names, with the default set to "$$". This flag is added to proteins from the reference database to distinguish them from those derived from the customized database. You may choose custom characters, but they must not appear in the genome or transcriptome data.
-- __maxprolen__: The maximum total length of protein sequences (in amino acids) to be loaded into memory at once. The default is 600,000,000 amino acids, which allows parallel processing of 80k MS2 on a machine with 128 GB of RAM. You can adjust this value based on your system’s memory capacity.
-- __minprodna__: Minimum length (in amino acids) for sequences of six-frame translation of DNA. For species with extensive splicing, a threshold of 10 is recommended; for species with minimal splicing, 50 is suggested. We strongly encourage users to adjust this parameter based on their specific research goals—for example, a smaller value is advisable for short open reading frames (sORF) identification.
-- __minprorna__: Minimum length (in amino acids) for sequences of three-frame translation of RNA, default is 50.
-- __transplnum__: Number of threads used for substring-level deduplication in the customized database. It is recommended to set this to 1.5 times the number of CPU cores.
-- __TransPath__: Output directory for the customized database. This should be an empty folder that will store both the translated and deduplicated databases.
 - __DNAFolder__: Path to the file or folder containing DNA sequences.
 - __RNAFolder__: Path to the file or folder containing RNA sequences. Please note that pAnno requires assembled RNA sequences, which can be obtained from RNA reads through either reference-guided or de novo transcriptome assembly. We recommend using __de novo__ assembly by [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) to maximize the recovery of candidate sequences. Rest assured, pAnno's robust algorithms automatically filter out low-confidence results.
 - __ProteinDatabase__: Reference protein database, with sequence headers starting with “>”.
 - __RawGFF__: Genome annotation file in General Feature Format (GFF). pAnno uses this file to generate correction information for annotated genes.
 - __OutputPath__: Path to the output directory of all results.
-- __psm_fdr_type__: FDR filtering mode for the database search stage. Set to 1 for peptide-level filtering, or 0 for spectrum-level filtering.
-- __psm_fdr1__: FDR threshold for __step 1__ in database search stage. The default value is 0.01.
-- __psm_fdr2__: FDR threshold for __step 2__ in database search stage. The default value is 0.01.
-- __dbr_threshold__: FDR threshold for the __DBReducer__ in database search stage. The default value is 0.1.
+### [DBGeneration]
+- __TransPath__: Output directory for the customized database. This should be an empty folder that will store both the translated and deduplicated databases.
+- __minprodna__: Minimum length (in amino acids) for sequences of six-frame translation of DNA. For species with extensive splicing, a threshold of 10 is recommended; for species with minimal splicing, 50 is suggested. We strongly encourage users to adjust this parameter based on their specific research goals—for example, a smaller value is advisable for short open reading frames (sORF) identification.
+- __minprorna__: Minimum length (in amino acids) for sequences of three-frame translation of RNA, default is 50.
+- __transplnum__: Number of threads used for substring-level deduplication in the customized database. It is recommended to set this to 1.5 times the number of CPU cores.
+### [DBSearch]
+- __maxprolen__: The maximum total length of protein sequences (in amino acids) to be loaded into memory at once. The default is 600,000,000 amino acids, which allows parallel processing of 80k MS2 on a machine with 128 GB of RAM. You can adjust this value based on your system’s memory capacity.
 - __open_1__: Search mode selection for __step 1__ in database search stage. Set to 1 for open search and 0 for restricted search.
 - __open_2__: Search mode selection for __step 2__ in database search stage. Set to 1 for open search and 0 for restricted search.
 - __multip_1__: Number of processes used in __step 1__ of database search stage. This should be adjusted based on available memory, genome size, and dataset scale. A preliminary test run is recommended to determine the optimal setting.
@@ -119,11 +116,27 @@ The configuration file is in the format of a text file with the extension __.cfg
 - __selectmod__: Variable modifications. Choose appropriate modifications from documentation x, separated by semicolons.
 - __fixmod__: Fixed modifications. Use the same format as for selectmod.
 - __pep_length__: Minimum and maximum peptide lengths. Default is "6 100", indicating a minimum length of 6 and a maximum of 100. Adjust as needed, especially for immunopeptidome identification.
+### [FDRControl]
+- __psm_fdr_type__: FDR filtering mode for the database search stage. Set to 1 for peptide-level filtering, or 0 for spectrum-level filtering.
+- __psm_fdr1__: FDR threshold for __step 1__ in database search stage. The default value is 0.01.
+- __psm_fdr2__: FDR threshold for __step 2__ in database search stage. The default value is 0.01.
+- __dbr_threshold__: FDR threshold for the __DBReducer__ in database search stage. The default value is 0.1.
+### [CDSInference]
 - __anno_mode__: CDS inference mode. Default is 1, reporting results in CDS units and inferring complete gene coding regions based on _CDS mapping groups_. Set to 5 to report all possible corresponding positions of peptides, suitable for peptidomics studies.
 - __specie_mode__: Species type for your study. Set to 1 for complex species with extensive splicing, and 0 for simple species with minimal splicing.
 - __chr_map_pl__: Number of chromosomes processed in parallel during peptide-to-genome mapping. This parameter is effective for complex species such as _H. sapiens_, whose longest DNA strands can exceed 10,000 bases. It is recommended to set this to approximately 1.5 times the number of CPU cores.
 - __pep_map_pl__: Number of peptides processed in parallel per chromosome during mapping. Also recommended to be around 1.5 times the number of CPU cores.
-  
+### [MSData]
+- __msmsnum__: Totle number of MS2 files.
+- __msmsfolder__: Totle number of folders containing MS2 files.
+- __msmspath1__: Path to the first folder containing MS2 files. If there are multiple folders, you will also need to specify ```msmspath2```, ```msmspath3```, and so on.
+- __msmstype__: Must be set to MGF. Therefore, raw data needs to be converted to this format using tools such as [pParse](https://pfind.net/software/pParse/index.html) or [msconvert](https://fragpipe.nesvilab.org/docs/tutorial_convert.html).
+
+__Note__: Among the parameters listed above, ```specie_mode```, the settings under __[MSData]__, and path-related parameters such as ```DNAFolder``` must be customized. For all other parameters, if you are unsure, it is recommended to use the default values.
+
+
+
+
 ## 📅 Note
 ### We will update within two days, including test data and explanation of the software output results.
 
