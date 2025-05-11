@@ -80,6 +80,6 @@ Each line following the first in an item is indented by one column and serves as
 - The `Start` and `End` columns indicate the translation start and end positions of the CDS on the corresponding chromosome.
 
 
-**Technical Support:** 
+#### Technical Support:
 At this stage, __pAnno__ has only been tested by a limited number of users, so this document may lack certain important details. If you encounter any issues during use or have any suggestions, please feel free to contact us. We will respond as promptly as possible and make the necessary improvements.
 📧 **Contact info**: Kaifei Wang.  Email: [wangkaifei20@mails.ucas.edu.cn](mailto:wangkaifei20@mails.ucas.edu.cn), WeChat: ```wwwangnapao99```
