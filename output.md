@@ -2,7 +2,7 @@
  * @Author: wangkaifei kfwang@stu.xidian.edu.cn
  * @Date: 2025-05-11 14:37:59
  * @LastEditors: wangkaifei kfwang@stu.xidian.edu.cn
- * @LastEditTime: 2025-05-11 19:56:16
+ * @LastEditTime: 2025-05-11 21:13:17
  * @FilePath: \public\output.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -34,7 +34,7 @@
 │ │ └── RNARed/ # Directory storing DBReducer results for RNA three-frame translated database
 │ ├── pFind-Filtered.spectra # PSM identification results of Step 2 </pre>
 
-### Please prioritize the following result files:
+#### Please prioritize the following result files:
 - novel.spectra
 - [dna_anno.panno](#dna_anno.panno)
 #### For complex species, the following result files are also recommended:
@@ -43,39 +43,43 @@
   
 ## 🛠️ Output Documentation
 ### dna_anno.panno
-|Column               |   Content                                                         |
-|--------------------|----------------------------------------------------------------------|
-| `Is_rna`          | 0 or 1. 1 indicates RNA-originated only, 0 indicates inferred from genome.|
-| `Is_mutation`          | 0 or 1. 1 indicates this CDS contains mutations |
-| `Is_splice`      | 0 or 1. 1 indicates a splice site with peptide evidence                       |
-| `Is_subset`       | 0 or 1. 1 indicates the novel peptides supporting this CDS are a true subset of those from another CDS. |
-| `Chr`        | Chromosome name. For example, DNA.fna_line6152619_NC_000003.12 indicates chromosome NC_000003.12 located on line 6152619 of the DNA.fna file.|
-| `ID`       | 本CDS对应到的定制数据库中的protein ID。                          |
-| `Frame`     | 阅读框来源。因为pAnno支持不同frame拼接的剪接体，所以此处用'4'标表示剪接体 |
-| `pep_q_value`        | 支持本CDS的novel peptides的最小q-value                                      |
-| `Novel_pep`      | 支持本CDS的novel peptides，以';'分隔                                   |
-| `Old_pep`         | 本CDS覆盖到的known peptides (derived from reference database)，以';'分隔 |
-| `Start_codon`        | 推断的起始子。请注意，此项仅对于简单物种(几乎无剪接)有效，复杂物种（具有大量剪接）请参考part1.panno文件|
-| `Start`       | 整数，CDS在本染色体上开始翻译的位置 （此项仅对于简单物种有效，复杂物种请参考part1.panno文件） |
-| `End`    | 整数，CDS在本染色体上结束翻译的位置 （此项仅对于简单物种有效，复杂物种请参考part1.panno文件）|
-| `Strand`  | 正负链标记                              |
-| `Mutation_info` | 突变信息。1:5:S->T表示`Novel_pep`中的第一条肽段的第5个氨基酸从S突变为了T，以';'分隔|
-| `Splice_info`         | 剪接信息。"4683787;5174351"表示4683787和5174351位置的碱基分别为donor和acceptor位点 |
-| `Anno_pro`      | 对基因组注释的修正。"Start:5172647,End:5172740"表示对本DNA链的(5172647,5172740)段的编码区注释做了修正。以';'分隔                                      |
-| `Pro_seq` | CDS对应的氨基酸序列                      |
-| `Gene_seq` | CDS对应的碱基序列                                |
-| `Gene_q_value`  | 暂未启用。                             |
-| `Target/Decoy`  | 暂未启用。                             |
+| Column           | Description                                                                                      |
+|------------------|--------------------------------------------------------------------------------------------------|
+| `Is_rna`         | 1 if the CDS is derived from RNA only; 0 if inferred from the genome.  |
+| `Is_mutation`    | 1 if the CDS contains mutations.                                                                 |
+| `Is_splice`      | 1 if the CDS is a spliced CDS with proteome evidence |
+| `Is_subset`      | 1 if the novel peptides are a subset of those from another CDS.                                  |
+| `Chr`            | Chromosome name, e.g., `DNA.fna_line6152619_NC_000003.12` indicates chromosome `NC_000003.12` located on line 6152619 of the DNA.fna file.                                    |
+| `ID`             | The corresponding protein ID in the customized database of the CDS.  |
+| `Frame`          | Translation frame. '4' indicates a splice junction.                                   |
+| `pep_q_value`    | Lowest q-value among supporting novel peptides.                                                  |
+| `Novel_pep`      | Novel peptides supporting the CDS, separated by `;`.                                             |
+| `Old_pep`        | Known peptides (from reference database) covered by this CDS, separated by `;`.            |
+| `Start_codon`    | Inferred start codon (only for simple species).                        |
+| `Start` / `End`  | Translation start and end positions (only for simple species).           |
+| `Strand`         | DNA strand (`+` or `-`).                            |
+| `Mutation_info`  | Format: `1:5:S->T` — 1st peptide, 5th aa, S to T. Separated by `;`.   |
+| `Splice_info`    | Donor and acceptor positions, e.g., `4683787;5174351` indicates donor and acceptor sites at positions 4683787 and 5174351, respectively.        |
+| `Anno_pro`       | Annotation corrections, e.g., `Start:5172647,End:5172740` indicates a revised CDS annotation in the range (5172647, 5172740). Entries are separated by `;`.          |
+| `Pro_seq`        | Amino acid sequence of the CDS.            |
+| `Gene_seq`       | Nucleotide sequence of the CDS.          |
+| `Gene_q_value`   | Not currently used.                  |
+| `Target/Decoy`   | Not currently used. |
 
 ### part1.panno
-本文件内容与dna_anno.panno基本一致，但具有二级标题。每个item代表一个CDS mapping grop，这些CDS被推断为组成一个完整的基因编码区。
-item的第一行标注了该基因中跨越全部表达区域的部分（包括内部的非编码区），需要注意:
-- `Is_rna` 一列的值为1，表示CDS mapping group的开始
-- `Splice_info`一列有`n-1`对donor和acceptor位点，`n`表示组中的CDS数量。比如`(62535943,62535191);(62535000,62534074);`表示CDS mapping group中有3个CDS，分别在62535943bp-62535191bp和62535000bp-62534074bp处发生剪接。
-- `Pro_seq`表示完整编码区的氨基酸序列
-- `Gene_seq`表示完整编码区的碱基序列
-- `Mutation`本列位于末尾。表示完整编码区中的突变信息，`102:Q->R`表示`Pro_seq`中的第102个氨基酸从Q突变为R。以';'分隔
+This file shares a similar structure with `dna_anno.panno` but includes __secondary headers__. Each item represents a `CDS mapping group`, where the CDSs are inferred to translate into the same protein, thereby facilitating the reconstruction of comprehensive gene coding regions.
+The __first line__ of each item represents the continuous span that covers the entire coding region of the gene. __Please note:__
+- `Is_rna` column is 1, indicating the start of a `CDS mapping group`.
+- `Splice_info` column contains `n-1` pairs of donor and acceptor sites, where `n` is the number of CDSs in the group. For example, `(62535943,62535191);(62535000,62534074)` indicates that the `CDS mapping group` consists of three CDSs, with splicing occurring at 62535943^62535191 bp and 62535000^62534074 bp.
+- `Pro_seq` represents the amino acid sequence of the complete coding region.
+- `Gene_seq` represents the nucleotide sequence of the complete coding region.
+- `Mutation` column is located at the end of the entry and describes mutations within the full coding region. For example, `102:Q->R` means the 102nd amino acid in the Pro_seq changed from Q to R. Multiple entries are separated by `;`.
 
-item第一行之后的每行缩进一列，按二级标题输出，代表该一个CDS，是该基因的一个部分:
-- `Start_codon`只针对CDS mapping group中处于N端的CDS做起始子推断，并将结果写入item第一行的`Start_codon`列中。其他CDS的`Start_codon`列均为空。
-- `Start`和`End`列表示该CDS在本染色体上的翻译起始和结束位置
+Each line following the first in an item is indented by one column and serves as a secondary entry, representing an individual CDS that forms part of the `CDS mapping group`:
+- `Start_codon` is inferred only for the N-terminal CDS within the `CDS mapping group`. The result is recorded in the `Start_codon` column of the item’s first line, while all other CDS entries in the group have this column left blank.
+- The `Start` and `End` columns indicate the translation start and end positions of the CDS on the corresponding chromosome.
+
+
+**Technical Support:** 
+At this stage, __pAnno__ has only been tested by a limited number of users, so this document may lack certain important details. If you encounter any issues during use or have any suggestions, please feel free to contact us. We will respond as promptly as possible and make the necessary improvements.
+📧 **Contact info**: Kaifei Wang.  Email: [wangkaifei20@mails.ucas.edu.cn](mailto:wangkaifei20@mails.ucas.edu.cn), WeChat: ```wwwangnapao99```

@@ -29,7 +29,7 @@ Staring our repository will remind you our updates. -->
 <!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-repo/pUniFind) -->
 
 This is the official repository for **pAnno**, a groundbreaking end-to-end workflow for identifying novel coding events, including full gene coding regions, splicing, mutations, and non-canonical HLA-bound peptides. Developed by [pFind group](https://pfind.net/).
-![head](./img/head.png)
+<img src="./img/head.png" alt="head" width="80%">
 ## 🚀 Key Designs
 🔥 **Multi-tiered iterative open search strategy** enables dynamic database refinement and hierarchical spectral analysis.
 
@@ -142,7 +142,7 @@ __Note__: Among the parameters listed above, ```specie_mode```, the settings und
 
 
 ## 📅 Note
-### We will update within two days, including test data and explanation of the software output results.
+### We will add the test data within a day.
 
 
 ## 🛠️ Technical Support  
@@ -156,8 +156,12 @@ We provide **priority support** for user-reported issues through the following c
 1. **GitHub Issues**: [Open a new issue](https://github.com/Wang-kaifei/pAnno_pub/issues)
 
 2. **pFind Studio user support**: 
-   - **Support Email** [support@pfind.org](mailto:support@pfind.org)
+   - Support Email: [support@pfind.org](mailto:support@pfind.org)
+
+3. **Contact the author of pAnno directly**: 
+   - Kaifei Wang.  Email: [wangkaifei20@mails.ucas.edu.cn](mailto:wangkaifei20@mails.ucas.edu.cn), WeChat: ```wwwangnapao99```
    <!-- - **Forum**: [issues](https://pfind.net/forum/) -->
+At this stage, __pAnno__ has only been tested by a limited number of users, so this document may lack certain important details. If you encounter any issues during use or have any suggestions, please feel free to contact us. We will respond as promptly as possible and make the necessary improvements.
 
 **For collaboration requests:**  
 📧 **Contact info**: Kaifei Wang.  Email: [wangkaifei20@mails.ucas.edu.cn](mailto:wangkaifei20@mails.ucas.edu.cn), WeChat: ```wwwangnapao99```
