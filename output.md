@@ -2,12 +2,14 @@
  * @Author: wangkaifei kfwang@stu.xidian.edu.cn
  * @Date: 2025-05-11 14:37:59
  * @LastEditors: wangkaifei kfwang@stu.xidian.edu.cn
- * @LastEditTime: 2025-05-11 18:27:27
+ * @LastEditTime: 2025-05-11 18:50:41
  * @FilePath: \public\output.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 ## 🛠️ Output Tree
-output-root/
+
+
+<pre> ``` output-root/
 ├── novel.spectra # Identified peptide-spectrum matches (PSMs) corresponding to novel peptides
 ├── annoed.spectra # Identified PSMs corresponding to known peptides (from reference database)
 ├── stage2_seqs.spectra # Database search results filtered by grouped FDR
@@ -30,7 +32,8 @@ output-root/
 │ │ │── Reduced.fasta # Result of reduced customized database
 │ │ │── DNARed/ # Directory storing DBReducer results for DNA six-frame translated database
 │ │ └── RNARed/ # Directory storing DBReducer results for RNA three-frame translated database
-│ ├── pFind-Filtered.spectra # PSM identification results of Step 2
+│ ├── pFind-Filtered.spectra # PSM identification results of Step 2 ``` </pre>
+
 ### Please prioritize the following result files:
 - novel.spectra
 - [dna_anno.panno](#dna_anno.panno)
@@ -40,6 +43,6 @@ output-root/
 
 
 
-## 🛠️ Documentation
+## 🛠️ Output Documentation
 ### dna_anno.panno
 
