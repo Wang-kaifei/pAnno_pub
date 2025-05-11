@@ -79,7 +79,9 @@ cd pAnnobin
 pAnno.exe pAnno.cfg # It is recommended to replace it with an absolute path
 ```
 
-### 2. CDS filter for simple species: deep learning-based scoring model
+### 2. Output Explanation
+
+### 3. CDS filter for simple species: deep learning-based scoring model
 This is an independent deep learning-based module specifically designed for simple organisms with minimal splicing, aiming to score and filter candidate CDS regions. Initial results should be generated using the main software, after which our provided script can be employed for online training.
 <!-- 注意这里还要写每个脚本怎么用 -->
 ```bash
