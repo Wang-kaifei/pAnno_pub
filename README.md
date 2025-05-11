@@ -29,6 +29,7 @@ Staring our repository will remind you our updates. -->
 <!-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-repo/pUniFind) -->
 
 This is the official repository for **pAnno**, a groundbreaking end-to-end workflow for identifying novel coding events, including full gene coding regions, splicing, mutations, and non-canonical HLA-bound peptides. Developed by [pFind group](https://pfind.net/).
+![head](./img/head.png)
 ## 🚀 Key Designs
 🔥 **Multi-tiered iterative open search strategy** enables dynamic database refinement and hierarchical spectral analysis.
 
