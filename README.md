@@ -120,11 +120,17 @@ The configuration file is in the format of a text file with the extension __.cfg
 - __selectmod__: Variable modifications. Choose appropriate modifications from documentation x, separated by semicolons.
 - __fixmod__: Fixed modifications. Use the same format as for selectmod.
 - __pep_length__: Minimum and maximum peptide lengths. Default is "6 100", indicating a minimum length of 6 and a maximum of 100. Adjust as needed, especially for immunopeptidome identification.
-### [FDRControl]
+
+### [QualityControl]
+- __mstol__: Mass tolerance threshold for MS1 (precursor) spectra, specified in ppm or Da.
+- __msmstol__: Mass tolerance threshold for MS2 (fragment) spectra, specified in ppm or Da.
+- __mstolppm__: Unit for MS1 mass tolerance; set to 1 for ppm or 0 for Da.
+- __msmstolppm__: Unit for MS2 mass tolerance; set to 1 for ppm or 0 for Da.
 - __psm_fdr_type__: FDR filtering mode for the database search stage. Set to 1 for peptide-level filtering, or 0 for spectrum-level filtering.
 - __psm_fdr1__: FDR threshold for __step 1__ in database search stage. The default value is 0.01.
 - __psm_fdr2__: FDR threshold for __step 2__ in database search stage. The default value is 0.01.
 - __dbr_threshold__: FDR threshold for the __DBReducer__ in database search stage. The default value is 0.1.
+
 ### [CDSInference]
 - __anno_mode__: CDS inference mode. Default is 1, reporting results in CDS units and inferring complete gene coding regions based on _CDS mapping groups_. Set to 5 to report all possible corresponding positions of peptides, suitable for peptidomics studies.
 - __specie_mode__: Species type for your study. Set to 1 for complex species with extensive splicing, and 0 for simple species with minimal splicing.
