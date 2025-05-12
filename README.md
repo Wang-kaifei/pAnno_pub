@@ -74,7 +74,7 @@ Details can be seen in our paper.
 Currently pAnno only supports running on Windows platform. We are working on a Linux version. Additionally, each module of pAnno can operate independently, allowing users to input peptide identification results directly and seamlessly proceed with the downstream peptide-to-CDS inference module.
 
 ### 1. main software
-The released main software package is available on [v1.1](https://github.com/Wang-kaifei/pAnno_pub/releases)
+The released main software package is available on [v1.0.1](https://github.com/Wang-kaifei/pAnno_pub/releases)
 ```bash
 cd pAnnobin
 pAnno.exe pAnno.cfg # It is recommended to replace it with an absolute path
@@ -93,7 +93,7 @@ cd pAnno_pub
 pip install -r requirements.txt
 ```
 ## 🛠️ TestData
-The test data is available on [Google Drive]([Google Drive](https://drive.google.com/drive/folders/1g6rwQ2j7eK1r0_brV71hwO9d9FocT1Lc?usp=drive_link)). The test data include three sets, representing a simple organism (yeast), a complex organism (Pyrus), and non-canonical HLA-binding peptides data (HLA), respectively. Specifically:
+The test data is available on [Google Drive](https://drive.google.com/drive/folders/1g6rwQ2j7eK1r0_brV71hwO9d9FocT1Lc?usp=drive_link). The test data include three sets, representing a simple organism (yeast), a complex organism (Pyrus), and non-canonical HLA-binding peptides data (HLA), respectively. Specifically:
 
 <pre>yeast/
 ├── dataset/ 
@@ -148,7 +148,8 @@ The configuration file is in the format of a text file with the extension __.cfg
 - __multip_1__: Number of processes used in __step 1__ of database search stage. This should be adjusted based on available memory, genome size, and dataset scale. A preliminary test run is recommended to determine the optimal setting.
 - __multip_2__: Number of processes used in __step 2__ and DBReducer of database search stage. Because this step involves processing of the customized database, the configuration is particularly important. Proper settings can significantly improve search speed. It is recommended to run an initial test to determine the optimal parameters.
 - __activation_type__: Instrument type for your mass spectrometry datasets. Optional: HCD-FTMS, HCD-ITMS, CID-FTMS, CID-ITMS
-- __enzyme__: Enzyme cleavage type. Default is "Trypsin KR_C", indicating cleavage by trypsin. Users may select other enzyme types as needed (see documentation at x).
+- __enzyme__: Enzyme type. Default is "Trypsin KR_C", indicating cleavage by trypsin. Users may select other enzyme types as needed (see documentation at x).
+- __digest__: Specificity of enzyme. 0 for Non-Specific; 1 for Semi-Specific; 3 for Fully-Specific
 - __max_clv_sites__: Maximum number of missed cleavage sites. Default is 3.
 - __selectmod__: Variable modifications. Choose appropriate modifications from documentation x, separated by semicolons.
 - __fixmod__: Fixed modifications. Use the same format as for selectmod.
