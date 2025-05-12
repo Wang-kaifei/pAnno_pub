@@ -49,8 +49,8 @@ This is the official repository for **pAnno**, a groundbreaking end-to-end workf
 
 
 ## &#x1F4E3; News
-- **2025/5/8** pAnno repository Initial Release 🚀.
-
+- **2025/5/8** pAnno repository initial release 🚀.
+- **2025/5/12** pAnno officially releases version v1.0.1 🚀.
 
 
 ## 📊 Benchmark Performance
@@ -93,9 +93,9 @@ cd pAnno_pub
 pip install -r requirements.txt
 ```
 ## 🛠️ TestData
-The test data is available on [Google Drive](https://drive.google.com/drive/folders/1g6rwQ2j7eK1r0_brV71hwO9d9FocT1Lc?usp=drive_link). The test data include three sets, representing a simple organism (yeast), a complex organism (Pyrus), and non-canonical HLA-binding peptides data (HLA), respectively. Specifically:
+The test data is available on [Google Drive](https://drive.google.com/drive/folders/1g6rwQ2j7eK1r0_brV71hwO9d9FocT1Lc?usp=drive_link). The test data comprise three sets, representing a simple specie (yeast), a complex specie (Pyrus), and non-canonical HLA-binding peptides (noncHLAp), corresponding to the dedicated pAnno module for noncHLAp discovery. Specifically:
 
-<pre>yeast/
+<pre>yeast
 ├── dataset/ 
 │ ├── msms/ # Test mass spectrometry dataset (only one file is provided as a representative example)
 │ ├── target_group_pace2.fasta # Reference protein database
@@ -173,7 +173,7 @@ The configuration file is in the format of a text file with the extension __.cfg
 ### [MSData]
 - __msmsnum__: Totle number of MS2 files.
 - __msmsfolder__: Totle number of folders containing MS2 files.
-- __msmspath1__: Path to the first folder containing MS2 files. If there are multiple folders, you will also need to specify ```msmspath2```, ```msmspath3```, and so on.
+- __msmspath1__: Path to the first folder containing MS2 files. If there are multiple folders, you will also need to specify ```msmspath2```, ```msmspath3```, and so on. (Note: We strongly recommend placing all MS2 files in one folder)
 - __msmstype__: Must be set to MGF. Therefore, raw data needs to be converted to this format using tools such as [pParse](https://pfind.net/software/pParse/index.html) or [msconvert](https://fragpipe.nesvilab.org/docs/tutorial_convert.html).
 
 __Note__: Among the parameters listed above, ```specie_mode```, the settings under __[MSData]__, and path-related parameters such as ```DNAFolder``` must be customized. For all other parameters, if you are unsure, it is recommended to use the default values.
@@ -182,7 +182,7 @@ __Note__: Among the parameters listed above, ```specie_mode```, the settings und
 
 
 ## 📅 Note
-### We will add the test data within a day.
+### The noncHLAp test dataset will be uploaded within half a day
 
 
 ## 🛠️ Technical Support  
