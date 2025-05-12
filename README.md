@@ -92,6 +92,38 @@ git clone https://github.com/Wang-kaifei/pAnno_pub.git
 cd pAnno_pub
 pip install -r requirements.txt
 ```
+## 🛠️ TestData
+The test data is available on [Google Drive]([Google Drive](https://drive.google.com/drive/folders/1g6rwQ2j7eK1r0_brV71hwO9d9FocT1Lc?usp=drive_link)). The test data include three sets, representing a simple organism (yeast), a complex organism (Pyrus), and non-canonical HLA-binding peptides data (HLA), respectively. Specifically:
+
+<pre>yeast/
+├── dataset/ 
+│ ├── msms/ # Test mass spectrometry dataset (only one file is provided as a representative example)
+│ ├── target_group_pace2.fasta # Reference protein database
+│ ├── RNA.fna # RNA sequence file
+│ ├── DNA.fna # DNA sequence file
+│ ├── GCF_000146045.2_R64_genomic.gff # Reference genome annotation file
+├── pAnno.cfg # Configuration file </pre>
+
+<pre>Pyrus/
+├── dataset/ 
+│ ├── msms/ # est mass spectrometry dataset (only one file is provided as a representative example)
+│ ├── Pyrus_bretschneideri_Chr_gene.pep_V121010 # Reference protein database
+│ ├── Adult_leaf_transcripts.fasta # RNA sequence file (Our study used transcripts from all organs; here, only the leaf is provided as an example)
+│ ├── GCF_000315295.1_Pbr_v1.0_genomic.fna # DNA sequence file
+│ ├── Pyrus_bretschneideri_Chr_gene.gff_V121010 # Reference genome annotation file
+├── pAnno.cfg # Configuration file </pre>
+
+<!-- <pre>HLA/# non-canonical HLA-binding peptides 测试数据
+├── dataset/ 
+│ ├── msms/ # 测试质谱数据集（仅提供一个作为代表）
+│ ├── Pyrus_bretschneideri_Chr_gene.pep_V121010 # reference protein database
+│ ├── Adult_leaf_transcripts.fasta # RNA序列文件(我们的文章中使用的是全部器官的拼接结果，这里只取一个器官为例)
+│ ├── GCF_000315295.1_Pbr_v1.0_genomic.fna # DNA序列文件
+│ ├── Pyrus_bretschneideri_Chr_gene.gff_V121010 # 参考基因组注释文件
+├── pAnno.cfg # 配置文件 </pre> -->
+
+
+
 
 ## 🛠️ Params
 The configuration file is in the format of a text file with the extension __.cfg__. The parameters are divided into three sections: __[General]__, __[DBGeneration]__, __[DBSearch]__, __[FDRControl]__, __[CDSInference]__ and __[MSData]__. The parameters in each section are as follows:
@@ -100,6 +132,7 @@ The configuration file is in the format of a text file with the extension __.cfg
 - __tNameFlag__: A flag used to label reference protein names, with the default set to "$$". This flag is added to proteins from the reference database to distinguish them from those derived from the customized database. You may choose custom characters, but they must not appear in the genome or transcriptome data.
 - __DNAFolder__: Path to the file or folder containing DNA sequences.
 - __RNAFolder__: Path to the file or folder containing RNA sequences. Please note that pAnno requires assembled RNA sequences, which can be obtained from RNA reads through either reference-guided or de novo transcriptome assembly. We recommend using __de novo__ assembly by [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) to maximize the recovery of candidate sequences. Rest assured, pAnno's robust algorithms automatically filter out low-confidence results.
+- __ExterDBPath__: The path (or directory) to an additional external protein sequence database provided by user, such as a predicted mutation database; leave empty if none.
 - __ProteinDatabase__: Reference protein database, with sequence headers starting with “>”.
 - __RawGFF__: Genome annotation file in General Feature Format (GFF). pAnno uses this file to generate correction information for annotated genes.
 - __OutputPath__: Path to the output directory of all results.
