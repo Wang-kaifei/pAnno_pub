@@ -51,7 +51,7 @@ This is the official repository for **pAnno**, a groundbreaking end-to-end workf
 ## &#x1F4E3; News
 - **2025/5/8** pAnno repository initial release 🚀.
 - **2025/5/12** pAnno officially releases version v1.0.1 🚀.
-
+- **2025/5/12** pAnno officially releases version v1.0.2 🚀.
 
 ## 📊 Benchmark Performance
 Details can be seen in our paper.
@@ -74,7 +74,7 @@ Details can be seen in our paper.
 Currently pAnno only supports running on Windows platform. We are working on a Linux version. Additionally, each module of pAnno can operate independently, allowing users to input peptide identification results directly and seamlessly proceed with the downstream peptide-to-CDS inference module.
 
 ### 1. main software
-The released main software package is available on [v1.0.1](https://github.com/Wang-kaifei/pAnno_pub/releases)
+The released main software package is available on [v1.0.2](https://github.com/Wang-kaifei/pAnno_pub/releases)
 ```bash
 cd pAnnobin
 pAnno.exe pAnno.cfg # It is recommended to replace it with an absolute path
@@ -106,23 +106,20 @@ The test data is available on [Google Drive](https://drive.google.com/drive/fold
 
 <pre>Pyrus/
 ├── dataset/ 
-│ ├── msms/ # est mass spectrometry dataset (only one file is provided as a representative example)
+│ ├── msms/ # Test mass spectrometry dataset (only one file is provided as a representative example)
 │ ├── Pyrus_bretschneideri_Chr_gene.pep_V121010 # Reference protein database
 │ ├── Adult_leaf_transcripts.fasta # RNA sequence file (Our study used transcripts from all organs; here, only the leaf is provided as an example)
 │ ├── GCF_000315295.1_Pbr_v1.0_genomic.fna # DNA sequence file
 │ ├── Pyrus_bretschneideri_Chr_gene.gff_V121010 # Reference genome annotation file
 ├── pAnno.cfg # Configuration file </pre>
 
-<!-- <pre>HLA/# non-canonical HLA-binding peptides 测试数据
+<pre>HLA/
 ├── dataset/ 
-│ ├── msms/ # 测试质谱数据集（仅提供一个作为代表）
-│ ├── Pyrus_bretschneideri_Chr_gene.pep_V121010 # reference protein database
-│ ├── Adult_leaf_transcripts.fasta # RNA序列文件(我们的文章中使用的是全部器官的拼接结果，这里只取一个器官为例)
-│ ├── GCF_000315295.1_Pbr_v1.0_genomic.fna # DNA序列文件
-│ ├── Pyrus_bretschneideri_Chr_gene.gff_V121010 # 参考基因组注释文件
-├── pAnno.cfg # 配置文件 </pre> -->
-
-
+│ ├── msms/ # Test mass spectrometry dataset (only one file is provided as a representative example)
+│ └── ExterDB/ # Store the prediction database based transcriptome information from the original study
+│ ├── C3N02289_prot.fasta.fasta # reference protein database
+│ ├── readme.txt # Describe the genome transcriptome and annotation file sources
+├── pAnno.cfg # Configuration file </pre>
 
 
 ## 🛠️ Params
