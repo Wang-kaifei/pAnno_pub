@@ -179,7 +179,7 @@ __Note__: Among the parameters listed above, ```specie_mode```, the settings und
 
 
 ## 📅 Note
-### The noncHLAp test dataset will be uploaded within half a day
+
 
 
 ## 🛠️ Technical Support  
